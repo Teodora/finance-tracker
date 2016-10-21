@@ -24,11 +24,10 @@
 				stock_id: @stock.id ? @stock.id : ' '), class: 'btn btn-xs btn-success', method: :post %>
 			<% else %>
 				<span class="label label-default">
-					Stock cannot be added because you already added
 					<% if !current_user.under_stocks_limit? %>
-						10 stocks.
+						Cannot add more than 10 stocks.
 					<% else %>
-						that stock.
+						Stock already added.
 					<% end %>
 				</span>
 			<% end %>
